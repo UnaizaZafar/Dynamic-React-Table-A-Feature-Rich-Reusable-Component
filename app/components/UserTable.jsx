@@ -12,7 +12,7 @@ const UserTable = ({ userData }) => {
         </tr>
       </thead>
       <tbody
-        className="overflow-y-scroll text-center w-full"
+        className="overflow-y-scroll text-center w-full text-black"
         style={{ height: "75vh" }}
       >
         {userData.map((user, id) => (
