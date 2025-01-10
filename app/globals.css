@@ -13,23 +13,30 @@
     --foreground: #ededed;
   }
 }
-@font-face {
-  font-family: "Alegreya";
-  src: url("/fonts/Alegreya-Regular.otf") format("wofotff2");
-  font-weight: 400; /* Regular */
-  font-style: normal;
-}
 
 body {
   color: var(--foreground);
-  background-color: #4158d0;
-  background-image: linear-gradient(
-    43deg,
-    #4158d0 0%,
-    #c850c0 46%,
-    #ffcc70 100%
-  );
-
+  background: #fff;
   font-family: "Alegreya", sans-serif;
 }
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
 
+/* Track */
+::-webkit-scrollbar-track {
+  background: #a8a7a7;
+  border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #1e3a8a;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a7a7;
+}

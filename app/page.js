@@ -13,17 +13,15 @@ const dummyData = {
 };
 export default function Home() {
   return (
-    <div
-      className={
-        " flex flex-col gap-6 justify-center items-center h-full w-full p-16 bg-white bg-opacity-40 "
-      }
-    >
-      {/* <div className="bg-gray-100 w-full rounded-xl overflow-hidden"> */}
-        <h1 className="text-4xl text-black  font-medium p-6 bg-white">
-          Reusable Table Component
-        </h1>
+    <div className="">
+     
+      <h1 className="text-4xl text-neutral-700 font-bold bg-blue-50 py-8 px-10 shadow-sm">
+        Reusable Table Component
+      </h1>
+      <div className=" p-8 px-16">
         <UserTable userData={dummyData.data} />
-      {/* </div> */}
+      </div>
     </div>
+   
   );
 }
