@@ -14,14 +14,12 @@ const dummyData = {
 export default function Home() {
   return (
     <div className="">
-     
       <h1 className="text-4xl text-neutral-700 font-bold bg-blue-50 py-8 px-10 shadow-sm">
         Reusable Table Component
       </h1>
-      <div className=" p-8 px-16">
-        <UserTable userData={dummyData.data} />
+      <div className="py-8">
+        <UserTable userData={dummyData} />
       </div>
     </div>
-   
   );
 }

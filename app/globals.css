@@ -17,26 +17,19 @@
 body {
   color: var(--foreground);
   background: #fff;
-  font-family: "Alegreya", sans-serif;
+  /* font-family: "Alegreya", sans-serif; */
 }
-/* width */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
-
-/* Track */
 ::-webkit-scrollbar-track {
   background: #a8a7a7;
   border-radius: 5px;
 }
-
-/* Handle */
 ::-webkit-scrollbar-thumb {
   background: #1e3a8a;
   border-radius: 5px;
 }
-
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #a8a7a7;
+  background: #264bb0;
 }
