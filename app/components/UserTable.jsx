@@ -1,8 +1,8 @@
 const UserTable = ({ userData }) => {
   return (
-    <table className="table-fixed w-full backdrop-blur-md bg-blue-50 rounded-xl border-collapse overflow-hidden shadow-custom-shadow">
+    <table className="table-fixed w-full backdrop-blur-md bg-blue-50  border-collapse shadow-custom-shadow">
       <thead className="text-lg p-8 sticky top-0 ">
-        <tr className=" bg-blue-900 text-white flex justify-around">
+        <tr className=" bg-blue-900 text-white">
           <th className="py-3">First Name</th>
           <th className="py-3">Last Name</th>
           <th className="py-3">Phone</th>
@@ -12,13 +12,13 @@ const UserTable = ({ userData }) => {
         </tr>
       </thead>
       <tbody
-        className="overflow-y-scroll flex flex-col w-full"
+        className="overflow-y-scroll text-center w-full"
         style={{ height: "75vh" }}
       >
         {userData.map((user, id) => (
           <tr
             key={id}
-            className=" shadow-sm flex justify-around"
+            className=" shadow-sm"
           >
             <td className="py-3">{user.firstName}</td>
             <td className="py-3">{user.lastName}</td>
