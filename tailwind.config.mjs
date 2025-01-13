@@ -12,11 +12,8 @@ export default {
         foreground: "var(--foreground)",
         brown: "#a17d61",
       },
-      backgroundImage: {
-        cardBg: 'url("/images/black-and-green.jpg")',
-      },
       boxShadow: {
-        "custom-shadow": "0px 2px 8px #f4f4f5",
+        "custom-shadow": "0px 0px 5px #D0D0D0",
       },
       maxWidth: {
         "4/5": "80%",

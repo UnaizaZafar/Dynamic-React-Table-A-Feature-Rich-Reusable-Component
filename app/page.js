@@ -186,7 +186,7 @@ const dummyProductData = [
 export default function Home() {
   return (
     <>
-      <div className="bg-emerald-900 max-h-[calc(100vh-350px)] h-full  py-10">
+      <div className="bg-cyan-900 max-h-[calc(100vh-350px)] h-full  py-10">
         <h1 className="text-5xl text-white font-bold py-10 text-center ">
           Reusable Table Component
         </h1>
