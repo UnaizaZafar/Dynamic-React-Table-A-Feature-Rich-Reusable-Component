@@ -1,12 +1,10 @@
 const UserTable = ({ userData, tableHeading }) => {
   const data = Array.isArray(userData) ? userData : userData.data;
   let tableHeader = [];
-  let ignoreFirstHeader = true;
   if (data) {
     var obj = data[0];
     for (var key in obj) {
-      if (!ignoreFirstHeader) tableHeader.push(key);
-      else ignoreFirstHeader = false;
+      tableHeader.push(key);
     }
   }
   console.log(`data`, { data });
@@ -16,7 +14,7 @@ const UserTable = ({ userData, tableHeading }) => {
       <table className="w-full  rounded-lg overflow-hidden shadow-custom-shadow flex flex-col">
         <thead className="border-b border-zinc-100 bg-zinc-100">
           <tr className="*:py-3 *:px-6 *:grow *:basis-0 w-full text-left flex">
-            {tableHeader.map((value, id) => (
+            {tableHeader.slice(1).map((value, id) => (
               <th key={id}>{value}</th>
             ))}
           </tr>
@@ -27,9 +25,11 @@ const UserTable = ({ userData, tableHeading }) => {
               key={id}
               className="flex *:py-4 *:px-6 *:grow *:basis-0 border-b border-zinc-100"
             >
-              {Object.values(value).slice(1).map((colData, index) => (
-                <td key={index}>{colData}</td>
-              ))}
+              {Object.values(value)
+                .slice(1)
+                .map((colData, index) => (
+                  <td key={index}>{colData}</td>
+                ))}
             </tr>
           ))}
         </tbody>
