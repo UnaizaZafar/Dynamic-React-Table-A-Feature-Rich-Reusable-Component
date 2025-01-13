@@ -13,23 +13,26 @@
     --foreground: #ededed;
   }
 }
-
+.roboto{
+  font-family: var(--font-roboto);
+}
 body {
   color: var(--foreground);
-  background: #fff;
-  /* font-family: "Alegreya", sans-serif; */
+  background: #fafafa;
+  /* font-family:  */
 }
 ::-webkit-scrollbar {
   width: 8px;
+  height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #a8a7a7;
+  background: #d4d3d3;
   border-radius: 5px;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1e3a8a;
+  background: #9d9c9c;
   border-radius: 5px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #264bb0;
+  background: #a8a7a7;
 }

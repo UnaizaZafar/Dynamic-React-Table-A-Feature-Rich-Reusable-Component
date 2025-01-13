@@ -10,10 +10,16 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        brown:"#a17d61"
+        brown: "#a17d61",
       },
-      boxShadow:{
-        "custom-shadow":"0px 0px 8px #d1d5db"
+      boxShadow: {
+        "custom-shadow": "0px 2px 8px #f4f4f5",
+      },
+      maxWidth: {
+        "4/5": "80%",
+      },
+      maxHeight: {
+        "60vh": "60vh",
       },
     },
   },

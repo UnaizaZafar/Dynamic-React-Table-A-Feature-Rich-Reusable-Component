@@ -1,5 +1,5 @@
 import UserTable from "./components/UserTable";
-const dummyData = {
+const dummyUserData = {
   data: Array.from({ length: 32 }, (_, i) => ({
     id: i,
     firstName: `First ${i + 1}`,
@@ -11,15 +11,83 @@ const dummyData = {
   })),
   total: 32,
 };
+
+const dummyProductData = [
+  {
+    productId: 101,
+    productName: "Widget A",
+    category: "Tools",
+    price: 19.99,
+    inStock: true,
+  },
+  {
+    productId: 102,
+    productName: "Widget B",
+    category: "Tools",
+    price: 25.49,
+    inStock: false,
+  },
+  {
+    productId: 103,
+    productName: "Gadget X",
+    category: "Electronics",
+    price: 49.99,
+    inStock: true,
+  },
+  {
+    productId: 104,
+    productName: "Gadget Y",
+    category: "Electronics",
+    price: 89.99,
+    inStock: false,
+  },
+  {
+    productId: 105,
+    productName: "Widget C",
+    category: "Tools",
+    price: 22.99,
+    inStock: true,
+  },
+  {
+    productId: 106,
+    productName: "Gadget Z",
+    category: "Electronics",
+    price: 59.99,
+    inStock: true,
+  },
+  {
+    productId: 107,
+    productName: "Gadget W",
+    category: "Electronics",
+    price: 39.99,
+    inStock: true,
+  },
+  {
+    productId: 108,
+    productName: "Widget D",
+    category: "Tools",
+    price: 29.99,
+    inStock: false,
+  },
+];
 export default function Home() {
   return (
-    <div className="">
-      <h1 className="text-4xl text-neutral-700 font-bold bg-blue-50 py-8 px-10 shadow-sm">
-        Reusable Table Component
-      </h1>
-      <div className="py-8">
-        <UserTable userData={dummyData} />
+    <>
+      <div className="bg-cyan-900 max-h-[calc(100vh-350px)] h-full  py-10">
+        <h1 className="text-5xl text-white font-bold py-10 text-center ">
+          Reusable Table Component
+        </h1>
+        <div className="flex flex-col gap-8 pb-8 w-full">
+          <UserTable
+            userData={dummyUserData}
+            tableHeading={"User Data Table"}
+          />
+          <UserTable
+            userData={dummyProductData}
+            tableHeading={"Product Data Table"}
+          />
+        </div>
       </div>
-    </div>
+    </>
   );
 }
