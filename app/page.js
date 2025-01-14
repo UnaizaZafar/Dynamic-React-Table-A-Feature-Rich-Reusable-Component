@@ -1,5 +1,13 @@
 import UserTable from "./components/UserTable";
 
+const userColumnsHeader = [
+  { label: "First Name", key: "firstName" },
+  { label: "Last Name", key: "lastName" },
+  { label: "Phone", key: "phone" },
+  { label: "Email", key: "email" },
+  { label: "Age", key: "age" },
+  { label: "Address", key: "address" },
+];
 const dummyUserData = {
   data: Array.from({ length: 32 }, (_, i) => ({
     id: i,
@@ -12,7 +20,12 @@ const dummyUserData = {
   })),
   total: 32,
 };
-
+const productColumnsHeader = [
+  { label: "Product Name", key: "productName" },
+  { label: "Category", key: "category" },
+  { label: "Price", key: "price" },
+  { label: "In Stock", key: "inStock" },
+];
 const dummyProductData = [
   {
     productId: 101,
@@ -194,10 +207,12 @@ export default function Home() {
           <UserTable
             userData={dummyUserData}
             tableHeading={"User Data Table"}
+            columns={userColumnsHeader}
           />
           <UserTable
             userData={dummyProductData}
             tableHeading={"Product Data Table"}
+            columns={productColumnsHeader}
           />
         </div>
       </div>

@@ -1,35 +1,35 @@
-const UserTable = ({ userData, tableHeading }) => {
+const UserTable = ({ userData, tableHeading, columns }) => {
   const data = Array.isArray(userData) ? userData : userData.data;
-  let tableHeader = [];
-  if (data) {
-    var obj = data[0];
-    for (var key in obj) {
-      tableHeader.push(key);
-    }
+  // console.log("data", data);
+
+  // To extract objects from `data` (an array of objects)
+  for (var keys in data) {
+    var dataObject = data[keys];
   }
-  console.log(`data`, { data });
+  // To extract keys from extracted objects of `data`
+  var dataKeys = Object.keys(dataObject);
+  console.log("datakeys", dataKeys);
+
   return (
     <div className="mx-auto w-full max-w-4/5 rounded-lg px-8 py-6 text-black bg-white border border-zinc-200">
       <h1 className="text-3xl text-cyan-800 font-bold  pb-4">{tableHeading}</h1>
       <table className="w-full  rounded-lg overflow-hidden shadow-custom-shadow flex flex-col">
         <thead className="border-b border-zinc-100 bg-zinc-100">
           <tr className="*:py-3 *:px-6 *:grow *:basis-0 w-full text-left flex">
-            {tableHeader.slice(1).map((value, id) => (
-              <th key={id}>{value}</th>
+            {columns.map((headers, id) => (
+              <th key={id}>{headers.label}</th>
             ))}
           </tr>
         </thead>
         <tbody className="overflow-auto w-full h-full max-h-60vh">
-          {data.map((value, id) => (
+          {data.map((obj, id) => (
             <tr
               key={id}
               className="flex *:py-4 *:px-6 *:grow *:basis-0 border-b border-zinc-100"
             >
-              {Object.values(value)
-                .slice(1)
-                .map((colData, index) => (
-                  <td key={index}>{colData}</td>
-                ))}
+              {columns.map((col, id) => (
+                <td key={id}>{obj[col.key]}</td>
+              ))}
             </tr>
           ))}
         </tbody>
