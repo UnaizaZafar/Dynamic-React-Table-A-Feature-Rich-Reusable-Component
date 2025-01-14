@@ -1,15 +1,6 @@
 const UserTable = ({ userData, tableHeading, columns }) => {
   const data = Array.isArray(userData) ? userData : userData.data;
-  // console.log("data", data);
-
-  // To extract objects from `data` (an array of objects)
-  for (var keys in data) {
-    var dataObject = data[keys];
-  }
-  // To extract keys from extracted objects of `data`
-  var dataKeys = Object.keys(dataObject);
-  console.log("datakeys", dataKeys);
-
+ 
   return (
     <div className="mx-auto w-full max-w-4/5 rounded-lg px-8 py-6 text-black bg-white border border-zinc-200">
       <h1 className="text-3xl text-cyan-800 font-bold  pb-4">{tableHeading}</h1>
