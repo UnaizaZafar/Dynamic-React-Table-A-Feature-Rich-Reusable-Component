@@ -32,168 +32,56 @@ const dummyProductData = [
     productName: "Widget A",
     category: "Tools",
     price: 19.99,
-    inStock: (
-      <>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          x="0px"
-          y="0px"
-          width={0}
-          height={0}
-          viewBox="0 0 64 64"
-          className="size-6"
-        >
-          <path d="M27 55L6 33 9 29 26 41 55 12 59 16z"></path>
-        </svg>
-      </>
-    ),
+    inStock: true,
   },
   {
     productId: 102,
     productName: "Widget B",
     category: "Tools",
     price: 25.49,
-    inStock: (
-      <>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          x="0px"
-          y="0px"
-          width={0}
-          height={0}
-          className="size-6"
-          viewBox="0 0 64 64"
-        >
-          <path d="M 12 8 L 8 12 L 24.666016 32 L 8 52 L 12 56 L 32 39.333984 L 52 56 L 56 52 L 39.333984 32 L 56 12 L 52 8 L 32 24.666016 L 12 8 z"></path>
-        </svg>
-      </>
-    ),
+    inStock: false,
   },
   {
     productId: 103,
     productName: "Gadget X",
     category: "Electronics",
     price: 49.99,
-    inStock: (
-      <>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          x="0px"
-          y="0px"
-          width={0}
-          height={0}
-          viewBox="0 0 64 64"
-          className="size-6"
-        >
-          <path d="M27 55L6 33 9 29 26 41 55 12 59 16z"></path>
-        </svg>
-      </>
-    ),
+    inStock: true,
   },
   {
     productId: 104,
     productName: "Gadget Y",
     category: "Electronics",
     price: 89.99,
-    inStock: (
-      <>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          x="0px"
-          y="0px"
-          width={0}
-          height={0}
-          className="size-6"
-          viewBox="0 0 64 64"
-        >
-          <path d="M 12 8 L 8 12 L 24.666016 32 L 8 52 L 12 56 L 32 39.333984 L 52 56 L 56 52 L 39.333984 32 L 56 12 L 52 8 L 32 24.666016 L 12 8 z"></path>
-        </svg>
-      </>
-    ),
+    inStock: false,
   },
   {
     productId: 105,
     productName: "Widget C",
     category: "Tools",
     price: 22.99,
-    inStock: (
-      <>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          x="0px"
-          y="0px"
-          width={0}
-          height={0}
-          viewBox="0 0 64 64"
-          className="size-6"
-        >
-          <path d="M27 55L6 33 9 29 26 41 55 12 59 16z"></path>
-        </svg>
-      </>
-    ),
+    inStock: true,
   },
   {
     productId: 106,
     productName: "Gadget Z",
     category: "Electronics",
     price: 59.99,
-    inStock: (
-      <>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          x="0px"
-          y="0px"
-          width={0}
-          height={0}
-          viewBox="0 0 64 64"
-          className="size-6"
-        >
-          <path d="M27 55L6 33 9 29 26 41 55 12 59 16z"></path>
-        </svg>
-      </>
-    ),
+    inStock: true,
   },
   {
     productId: 107,
     productName: "Gadget W",
     category: "Electronics",
     price: 39.99,
-    inStock: (
-      <>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          x="0px"
-          y="0px"
-          width={0}
-          height={0}
-          viewBox="0 0 64 64"
-          className="size-6"
-        >
-          <path d="M27 55L6 33 9 29 26 41 55 12 59 16z"></path>
-        </svg>
-      </>
-    ),
+    inStock: true,
   },
   {
     productId: 108,
     productName: "Widget D",
     category: "Tools",
     price: 29.99,
-    inStock: (
-      <>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          x="0px"
-          y="0px"
-          width={0}
-          height={0}
-          className="size-6"
-          viewBox="0 0 64 64"
-        >
-          <path d="M 12 8 L 8 12 L 24.666016 32 L 8 52 L 12 56 L 32 39.333984 L 52 56 L 56 52 L 39.333984 32 L 56 12 L 52 8 L 32 24.666016 L 12 8 z"></path>
-        </svg>
-      </>
-    ),
+    inStock: false,
   },
 ];
 export default function Home() {
