@@ -1,5 +1,5 @@
-import UserTable from "./components/UserTable";
 
+import UserTable from "./components/UserTable";
 const userColumnsHeader = [
   { label: "First Name", key: "firstName" },
   { label: "Last Name", key: "lastName" },
@@ -84,6 +84,7 @@ const dummyProductData = [
     inStock: false,
   },
 ];
+
 export default function Home() {
   return (
     <>
