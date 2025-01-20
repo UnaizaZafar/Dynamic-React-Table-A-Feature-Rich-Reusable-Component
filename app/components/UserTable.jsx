@@ -13,13 +13,30 @@ const UserTable = ({ userData, tableHeading, columns }) => {
   const startIndex = lastIndex - selectedRows;
   const numberOfPages = Math.ceil(data.length / selectedRows); // divide total data with rows to get number of pages on which the data is divided
   const records = data.slice(startIndex, lastIndex);
-  // const [pageNumberLimit, setpageNumberLimit] = useState(5);
-  const [maxPageNumberLimit, setmaxPageNumberLimit] = useState(5);
-  const [minPageNumberLimit, setminPageNumberLimit] = useState(0);
-  // Array.from({ length: numberOfPages }, (num, key) => console.log(num, key));
+  let tempArr = Array.from({ length: numberOfPages }, (_, key) => key + 1);
 
-  let tempArr = Array.from({ length: 5 }, (_, key) => key + 1);
+  function renderPages() {
+    if (numberOfPages <= 5) setPaginationArr([...tempArr])
+    else {
+      let startPage = currentPage - 2;
+      let endPage = currentPage + 2;
 
+      if (startPage < 1) {
+        startPage = 1;
+        endPage = 5;
+      }
+      else if (endPage > tempArr.length) {
+        endPage = tempArr.length;
+        startPage = Math.max(endPage - 4, 1);
+      }
+
+      let newTempArr = tempArr.slice(startPage - 1, endPage);
+      setPaginationArr(newTempArr);
+    }
+  }
+  useEffect(() => {
+    renderPages();
+  }, [currentPage]);
   const handleSelect = (rows) => {
     setSelectedRows(rows);
     setIsOpen(false);
@@ -83,6 +100,7 @@ const UserTable = ({ userData, tableHeading, columns }) => {
         </tbody>
       </table>
       <div className="flex items-center justify-end gap-4 mt-4">
+        {/* Select Rows per Table */}
         <div className=" flex gap-2 items-center w-full">
           <h1 className="text-sm">Select No. of Rows</h1>
           <div className="relative">
@@ -110,14 +128,13 @@ const UserTable = ({ userData, tableHeading, columns }) => {
           <>
             {/*show PAGINATION */}
             <div className="flex gap-3 justify-end items-center">
-              {/* Got to first */}
+              {/* Go to first */}
               <button
                 onClick={() => {
                   setCurrentPage(1);
                 }}
                 className={`size-8 border rounded border-gray-300 p-1 hover:bg-cyan-800 hover:text-white justify-items-center  ${currentPage === 1
-                  ? "hover:bg-white !text-black/50 cursor-not-allowed"
-                  : ""
+                  && "hover:bg-white !text-black/50 cursor-not-allowed"
                   }`}
               >
                 <svg
@@ -141,8 +158,7 @@ const UserTable = ({ userData, tableHeading, columns }) => {
                   currentPage != 1 && setCurrentPage((prev) => prev - 1);
                 }}
                 className={`size-8 border rounded border-gray-300 p-1 hover:bg-cyan-800 hover:text-white justify-items-center ${currentPage === 1
-                  ? "hover:bg-white !text-black/50 cursor-not-allowed"
-                  : ""
+                  && "hover:bg-white !text-black/50 cursor-not-allowed"
                   }`}
               >
                 <svg
@@ -161,7 +177,16 @@ const UserTable = ({ userData, tableHeading, columns }) => {
                 </svg>
               </button>
               {/* Page Numbers */}
-
+              {paginationArr.map((pages, index) => (
+                <button
+                  onClick={() => setCurrentPage(pages)}
+                  key={index}
+                  className={` size-8 border rounded border-gray-300 p-1 hover:bg-cyan-800 hover:text-white justify-items-center ${currentPage === pages ? "bg-cyan-800 text-white" : ""
+                    } `}
+                >
+                  {pages}
+                </button>
+              ))}
               {/* {Array.from({ length: numberOfPages }, (_, key) => key + 1).map(
  (pageNumber) => (
    // pageNumber <= maxPageNumberLimit &&
@@ -182,15 +207,9 @@ const UserTable = ({ userData, tableHeading, columns }) => {
               <button
                 onClick={() => {
                   currentPage != numberOfPages && setCurrentPage((prev) => prev + 1);
-                  // currentPage + 1 > maxPageNumberLimit
-                  //   ? setmaxPageNumberLimit(maxPageNumberLimit + pageNumberLimit)
-                  //   : ""
-                  //   ? setminPageNumberLimit(minPageNumberLimit + pageNumberLimit)
-                  //   : "";
                 }}
                 className={`size-8 border rounded border-gray-300 p-1 hover:bg-cyan-800 hover:text-white justify-items-center cursor-pointer ${currentPage === numberOfPages
-                  ? "hover:bg-white !text-black/50 cursor-not-allowed"
-                  : ""
+                  && "hover:bg-white !text-black/50 cursor-not-allowed"
                   }`}
               >
                 <svg
@@ -211,8 +230,7 @@ const UserTable = ({ userData, tableHeading, columns }) => {
               <button
                 onClick={() => setCurrentPage(numberOfPages)}
                 className={`size-8 border rounded border-gray-300 p-1 hover:bg-cyan-800 hover:text-white justify-items-center ${currentPage === numberOfPages
-                  ? "hover:bg-white !text-black/50 cursor-not-allowed"
-                  : ""
+                  && "hover:bg-white !text-black/50 cursor-not-allowed"
                   }`}
               >
                 <svg
