@@ -187,28 +187,12 @@ const UserTable = ({ userData, tableHeading, columns }) => {
                   {pages}
                 </button>
               ))}
-              {/* {Array.from({ length: numberOfPages }, (_, key) => key + 1).map(
- (pageNumber) => (
-   // pageNumber <= maxPageNumberLimit &&
-   // pageNumber > minPageNumberLimit && (
-   <button
-     onClick={() => setCurrentPage(pageNumber)}
-     key={pageNumber}
-     className={` size-8 border rounded border-gray-300 p-1 hover:bg-cyan-800 hover:text-white justify-items-center ${
-       currentPage === pageNumber ? "bg-cyan-800 text-white" : ""
-     } `}
-   >
-     {pageNumber}
-   </button>
- )
- // )
-)} */}
               {/* next */}
               <button
                 onClick={() => {
                   currentPage != numberOfPages && setCurrentPage((prev) => prev + 1);
                 }}
-                className={`size-8 border rounded border-gray-300 p-1 hover:bg-cyan-800 hover:text-white justify-items-center cursor-pointer ${currentPage === numberOfPages
+                className={`size-8 border rounded border-gray-300 p-1 hover:bg-cyan-800 hover:text-white justify-items-center ${currentPage === numberOfPages
                   && "hover:bg-white !text-black/50 cursor-not-allowed"
                   }`}
               >
